@@ -1,0 +1,2 @@
+#!/bin/sh -xe
+srec_cat ../../../../../../../s110_nrf51_8.0.0/s110_nrf51_8.0.0_softdevice.hex -intel _build/nrf51422_xxaa_s110.hex -intel -o esrille.nisse_ble.0.17.hex -intel --line-length=44

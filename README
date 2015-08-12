@@ -1,0 +1,61 @@
+The Esrille New Keyboard − NISSE
+Copyright 2013-2015 Esrille Inc. All Rights Reserved.
+
+This product includes the firmware (the "Firmware") for
+the Esrille New Keyboard - NISSE, using Nordic nRF51822 IC, being developed at
+Esrille Inc. (http://www.esrille.com/keyboard/).
+
+See the file NOTICE for copying permission.
+
+== Requirements ==
+
+* GCC ARM Embedded
+* Nordic nRF51 SDK version 9.0.0
+* Nordic S110 SoftDevice version 8.0
+* Esrille New Keyboard - NISSE using Nordic nRF51822 IC
+
+== Installation ==
+
+Take the following steps to build the Firmware on Fedora 22; on the other
+Linux distributions, you should be able to take the same or similar steps.
+
+1) Set up GCC ARM Embedded
+
+Download GCC ARM Embedded from,
+
+  https://launchpad.net/gcc-arm-embedded
+
+and install it to your favorite location.
+
+At this point, the Firmware is built and tested with,
+
+  gcc-arm-none-eabi-4_9-2015q2
+
+2) Set up nRF51 SDK and the Firmware source code
+
+----
+git clone https://github.com/esrille/new-keyboard.git
+cd new-keyboard/firmware/third_party/
+wget https://www.nordicsemi.com/eng/nordic/download_resource/45846/2/57914909 -O s110_nrf51_8.0.0.zip
+unzip s110_nrf51_8.0.0.zip -d s110_nrf51_8.0.0
+wget https://developer.nordicsemi.com/nRF51_SDK/nRF51_SDK_v9.x.x/nRF51_SDK_9.0.0_2e23562.zip
+unzip nRF51_SDK_9.0.0_2e23562.zip -d nRF51_SDK_9.0.0_2e23562
+cd nRF51_SDK_9.0.0_2e23562/examples/ble_peripheral/
+git clone https://github.com/esrille/ble_app_nisse.git
+cd ../../../
+patch -p0 < nRF51_SDK_9.0.0_2e23562/examples/ble_peripheral/ble_app_nisse/nisse/nRF51_SDK_9.0.0_2e23562.patch
+----
+
+Edit 'nRF51_SDK_9.0.0_2e23562/components/toolchain/gcc/Makefile.posix' and set
+its variables according to your GCC ARM Embedded installation.
+
+3) Make the Firmware
+
+----
+cd nRF51_SDK_9.0.0_2e23562/examples/ble_peripheral/ble_app_nisse/nisse/s110/armgcc/
+make
+./makehex
+----
+
+The last step generates 'esrille.nisse_ble.#.##.hex' which can be used for
+mbed drag-and-drop programming.

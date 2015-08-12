@@ -1,0 +1,50 @@
+The Esrille New Keyboard - NISSE
+Copyright 2013-2015 Esrille Inc. All Rights Reserved.
+
+This product includes the firmware (the "Firmware") for
+the Esrille New Keyboard - NISSE, using Nordic nRF51822 IC, being developed at
+Esrille Inc. (http://www.esrille.com/keyboard/).
+
+Unless otherwise explicitly stated in the individual source files,
+Esrille Inc. is supplying the Firmware for use solely and exclusively on the
+Esrille New Keyboard - NISSE. Hardware vendors and other distributors that
+combine and distribute commercially the hardware products with the Firmware
+must enter into a commercial license agreement with Esrille Inc.
+
+Some portions of the Firmware is licensed under the Apache License, Version 2.0
+(the "License"); you may not use those portions except in compliance with the
+License. You may obtain a copy of the License at:
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Some portions of the Firmware are provided under licenses other than the above
+mentioned licenses and may be under the copyright of organizations other than
+Esrille Inc.
+
+For more information, please contact at info@esrille.com.
+
+== Credits ==
+
+The Firmware contains code provided in the nRF51 SDK by Nordic Semiconductor
+for a Nordic Integrated Circuit ("nRF IC"), for use solely and exclusively on
+an nRF IC; see the individual source files for details.
+
+nRF51 SDK Documentation can be found online at:
+  http://developer.nordicsemi.com/nRF51_SDK/doc/
+
+== The Esrille logo ==
+
+The Esrille logo is a trademark of Esrille Inc. All rights reserved.
+
+The Esrille logo is a special trademark to identify the products developed and
+distributed by Esrille Inc.
+
+The Esrille logo can be used by anyone if that use of the logo is nominative.
+The "nominative use" authorizes everyone (even commercial companies) to use
+the trademark of another if:
+
+  1. The product or service cannot be readily identified without use of
+     the trademark;
+  2. The user only uses as much of the mark as is necessary to identify
+     the product or service; and,
+  3. The user does nothing to suggest sponsorship or endorsement by the
+     trademark holder.
