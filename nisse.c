@@ -61,8 +61,8 @@ bool report_buffer_empty(void)
 
 bool report_buffer_full(void)
 {
-    return (m_report_buffer.rp + 1 == m_report_buffer.wp) ||
-           (m_report_buffer.rp + 1 == &m_report_buffer.ring[MAX_REPORTS] && m_report_buffer.wp == m_report_buffer.ring);
+    return (m_report_buffer.wp + 1 == m_report_buffer.rp) ||
+           (m_report_buffer.wp + 1 == &m_report_buffer.ring[MAX_REPORTS] && m_report_buffer.rp == m_report_buffer.ring);
 }
 
 bool push_report(const uint8_t* report)
