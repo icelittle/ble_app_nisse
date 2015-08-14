@@ -209,9 +209,9 @@ static void gpiote_event_handler(uint32_t event_pins_low_to_high, uint32_t event
 
 static void detection_delay_timeout_handler(void* p_context)
 {
-    if (!scan())
-        --m_delay;
-    if (m_delay <= 0) {
+    if (scan())
+        m_delay = MAX_DELAY;
+    else if (--m_delay <= 0) {
         app_timer_stop(m_detection_delay_timer_id);
         app_gpiote_user_enable(m_gpiote_user_id);
     }
