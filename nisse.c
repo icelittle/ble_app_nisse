@@ -204,13 +204,13 @@ static void gpiote_event_handler(uint32_t event_pins_low_to_high, uint32_t event
     app_timer_stop(m_detection_delay_timer_id);
     scan();
     app_timer_start(m_detection_delay_timer_id, SCAN_INTERVAL, NULL);
-    m_delay = MAX_DELAY;
+    m_delay = MAX_DELAY + 1;
 }
 
 static void detection_delay_timeout_handler(void* p_context)
 {
     if (scan())
-        m_delay = MAX_DELAY;
+        m_delay = MAX_DELAY + 1;
     else if (--m_delay <= 0) {
         app_timer_stop(m_detection_delay_timer_id);
         app_gpiote_user_enable(m_gpiote_user_id);
