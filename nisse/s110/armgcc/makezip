@@ -1,0 +1,1 @@
+nrfutil dfu genpkg --application _build/nrf51822_xxaa_s110.bin --application-version 17  esrille.nisse_ble.0.17.zip

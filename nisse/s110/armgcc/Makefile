@@ -154,17 +154,17 @@ ASMFLAGS += -DS110
 ASMFLAGS += -DBLE_STACK_SUPPORT_REQD
 ASMFLAGS += -DBSP_UART_SUPPORT
 #default target - first one defined
-default: clean nrf51422_xxaa_s110
+default: clean nrf51822_xxaa_s110
 
 #building all targets
 all: clean
 	$(NO_ECHO)$(MAKE) -f $(MAKEFILE_NAME) -C $(MAKEFILE_DIR) -e cleanobj
-	$(NO_ECHO)$(MAKE) -f $(MAKEFILE_NAME) -C $(MAKEFILE_DIR) -e nrf51422_xxaa_s110
+	$(NO_ECHO)$(MAKE) -f $(MAKEFILE_NAME) -C $(MAKEFILE_DIR) -e nrf51822_xxaa_s110
 
 #target for printing all targets
 help:
 	@echo following targets are available:
-	@echo 	nrf51422_xxaa_s110
+	@echo 	nrf51822_xxaa_s110
 	@echo 	flash_softdevice
 
 
@@ -181,9 +181,9 @@ vpath %.s $(ASM_PATHS)
 
 OBJECTS = $(C_OBJECTS) $(ASM_OBJECTS)
 
-nrf51422_xxaa_s110: OUTPUT_FILENAME := nrf51422_xxaa_s110
-nrf51422_xxaa_s110: LINKER_SCRIPT=ble_app_hids_keyboard_gcc_nrf51.ld
-nrf51422_xxaa_s110: $(BUILD_DIRECTORIES) $(OBJECTS)
+nrf51822_xxaa_s110: OUTPUT_FILENAME := nrf51822_xxaa_s110
+nrf51822_xxaa_s110: LINKER_SCRIPT=ble_app_hids_keyboard_gcc_nrf51.ld
+nrf51822_xxaa_s110: $(BUILD_DIRECTORIES) $(OBJECTS)
 	@echo Linking target: $(OUTPUT_FILENAME).out
 	$(NO_ECHO)$(CC) $(LDFLAGS) $(OBJECTS) $(LIBS) -o $(OUTPUT_BINARY_DIRECTORY)/$(OUTPUT_FILENAME).out
 	$(NO_ECHO)$(MAKE) -f $(MAKEFILE_NAME) -C $(MAKEFILE_DIR) -e finalize
